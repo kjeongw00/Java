@@ -1,0 +1,11 @@
+package chap19_multithread;
+
+public class _06_reasonOfThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//
+	}
+	
+	static List<Map<String, String>>
+}

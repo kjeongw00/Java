@@ -1,0 +1,22 @@
+package chap04_controlStatement;
+
+public class _01_ifStatement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int score = 68;
+		
+		if(score >= 90)
+			System.out.println("A학점");
+		else if(score >= 80)
+			System.out.println("B학점");
+		
+		
+		
+		
+		
+		
+		
+	}	
+
+}

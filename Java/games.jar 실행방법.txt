@@ -1,0 +1,4 @@
+1. 파일탐색기에서 games.jar가 있는 폴더에서 우클릭 >  터미널에서 열기 > java -jar game.jar
+
+2. 파일탐색기에서 games.jar가 있는 폴더로 이동 > 위의 경로 복사 >
+windows버튼 + r > cmd 입력 후 실행 > D:(games.jar가 D드라이브에 있으면 실행) > cd 복사해놓은 경로(우클릭 : 붙여넣기) > java -jar games.jar

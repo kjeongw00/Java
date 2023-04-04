@@ -1,0 +1,14 @@
+package chap02_variables;
+
+public class _11_varVariables {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		var str = "hello";
+		
+		//변수의 클래스 확인
+		System.out.println("str의 타입 : " + 
+				str.getClass().getName());
+	}
+
+}

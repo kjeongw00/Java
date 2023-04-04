@@ -1,0 +1,11 @@
+package chap02_variables;
+
+public class _03_scopeOfVariables {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. 메인메소드 지역변수
+		int num1 = 100;
+	}
+
+}

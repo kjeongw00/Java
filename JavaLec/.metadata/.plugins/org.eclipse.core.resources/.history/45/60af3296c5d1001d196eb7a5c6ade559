@@ -1,0 +1,23 @@
+package chap19_multithread;
+
+public class _05_yieldMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int flag = 0;
+		
+		Thread t1 = new Thread() {
+			@Override
+			public void run() {
+				for(int i = 1; i <= 5; i++) {
+					if(flag > 0)
+						System.out.println(i);
+					else {
+						
+					}
+				}
+			}
+		};
+	}
+
+}

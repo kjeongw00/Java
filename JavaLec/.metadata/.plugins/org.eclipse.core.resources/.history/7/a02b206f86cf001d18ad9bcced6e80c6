@@ -1,0 +1,33 @@
+package chap98_homework.nc230329;
+
+import java.util.Scanner;
+
+public class hw_for03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int inputNum = sc.nextInt();
+		
+		int cnt = 0;
+		
+		for(int i = 2; i <= inputNum; i++) {
+			for(int j = 2; j <= i; j++) {
+				if(i % j == 0 && i != j) {
+					cnt++;
+				}
+				
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

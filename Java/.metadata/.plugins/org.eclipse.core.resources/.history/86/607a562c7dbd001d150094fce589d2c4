@@ -1,0 +1,21 @@
+package chap02_variables;
+
+public class _06_intType {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. 변수 선언 및 초기화
+		byte num1 = 10;
+		short num2 = 20;
+		
+		int result = num1 + num2;
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

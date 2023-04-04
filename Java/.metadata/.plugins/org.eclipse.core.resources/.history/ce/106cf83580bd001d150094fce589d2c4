@@ -1,0 +1,15 @@
+package chap99_etc;
+
+import java.io.IOException;
+
+public class _01_judgeAlphabet {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//1. 사용자 입력 값 받기
+		//read(): int 타입의 값을 반환하고 입력 값을 문자로 인식
+		//        리턴되는 int 타입의 값은 문자의 유니코드
+		int input = System.in.read();
+	}
+
+}

@@ -1,0 +1,19 @@
+package chap02_variables;
+
+public class _05_charType {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. char 타입의 변수 선언 및 초기화
+		char ch1 = 'A';
+		char ch2 = 65;
+		char ch3 = '\u0041';
+		
+		char ch4 = '가';
+		char ch5 = 44032;
+		char ch6 = '\uAC00';
+		
+		
+	}
+
+}

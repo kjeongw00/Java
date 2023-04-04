@@ -1,0 +1,33 @@
+package chap02_variables;
+
+public class _09_booleanType {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. boolean타입 변수 선언 및 초기화
+		boolean isOver = false;
+		int moverMeter = 0;
+		
+		//무한 반복문
+		while(true) {
+			//이 안의 코드를 무한 반복 실행
+			
+			//100미터를 넘어갔을 때 플래그(isOver의 값을
+			//true로 변경
+			if(moveMeter > 100) {
+				isOver = true;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
+
+}

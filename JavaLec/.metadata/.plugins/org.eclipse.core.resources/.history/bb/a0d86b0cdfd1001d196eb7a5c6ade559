@@ -1,0 +1,12 @@
+package chap19_multithread;
+
+import chap19_multithread.clazz.PrintNumWithoutSync;
+
+public class _08_NonSyncShareObj {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintNumWithoutSync pns = new PrintNumWithoutSync();
+	}
+
+}

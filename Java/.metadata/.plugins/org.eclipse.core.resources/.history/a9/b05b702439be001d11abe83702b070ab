@@ -1,0 +1,14 @@
+package chap03_operator;
+
+public class _02_arithmeticOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. 대입 연산자
+		//왼쪽 항의 변수에 오른쪽 항의 값을 대입
+		int a = 10;
+		int b = 6;
+		int c = b;
+	}
+
+}

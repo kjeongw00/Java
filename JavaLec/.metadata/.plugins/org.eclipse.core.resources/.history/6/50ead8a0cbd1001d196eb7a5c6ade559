@@ -1,0 +1,23 @@
+package chap19_multithread;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class _06_reasonOfThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//
+	}
+	
+	static List<Map<String, String>> selectBoardList() {
+		List<Map<String, String>> boardList = 
+				new ArrayList<Map<String, String>>();
+				
+		//boardList에 게시판 데이터를 담는다.
+		//DB에서 게시판정보 목록을 조회(게시판 정보 1억건)
+		
+		return boardList;
+	}
+}

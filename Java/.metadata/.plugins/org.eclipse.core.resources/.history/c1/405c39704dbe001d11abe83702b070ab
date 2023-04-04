@@ -1,0 +1,32 @@
+package chap04_controlStatement;
+
+public class _03_switchCase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String grade = "A";
+		
+		switch(grade) {
+			case "A":
+				System.out.println("점수는 "
+						+ "90이상입니다.");
+			case "B":
+				System.out.println("점수는 "
+						+ "90미만 "
+						+ "80점 이상입니다.");
+			default:
+				System.out.println("점수는 "
+						+ "80점 미만입니다.");
+				break;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package chap19_multithread;
+
+import chap19_multithread.clazz.PrintNumWithSync;
+import chap19_multithread.clazz.SyncThread1;
+
+public class _09_SyncShareObj {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintNumWithSync pns = 
+					new PrintNumWithSync();
+		
+		SyncThread1 t1 = new SyncThread1();
+		SyncThread2 t2 = new SyncThread2();
+	}
+
+}

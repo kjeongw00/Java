@@ -1,0 +1,12 @@
+package chap19_multithread;
+
+public class _01_useOfThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread thread = new Thread(new Runnable() {
+			
+		})
+	}
+
+}

@@ -1,0 +1,17 @@
+package chap19_multithread;
+
+import java.util.List;
+import java.util.Map;
+
+public class _06_reasonOfThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//
+	}
+	
+	static List<Map<String, String>> selectBoardList() {
+		List<Map<String, String>> boardList = 
+				new ArrayLisy<Map<String, String>>());
+	}
+}

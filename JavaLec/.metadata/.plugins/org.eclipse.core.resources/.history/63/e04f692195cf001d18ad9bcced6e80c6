@@ -1,0 +1,11 @@
+package chap19_multithread;
+
+public class _03_threadName {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread thread1 = Thread.currentThread();
+		System.out.println(thread1.getName() + "동작중");
+	}
+
+}

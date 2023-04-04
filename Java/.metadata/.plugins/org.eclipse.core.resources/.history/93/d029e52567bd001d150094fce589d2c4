@@ -1,0 +1,28 @@
+package chap02_variables;
+
+public class _01_initialize {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//변수의 선언과 사용
+		//1. 변수의 선언
+		int num1;
+		int num2;
+		
+		//2. 같은 자료형의 변수 여러개 선언
+		int num3, num4, num5;
+		
+		//3. 값의 할당
+		num1 = 10;
+		num2 = 20;
+		num3 = 30;
+		
+		//4. 변수의 선언과 동시에 초기화
+		int num6 = 60;
+		
+		
+		
+		
+	}
+
+}

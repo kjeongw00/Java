@@ -1,0 +1,12 @@
+package chap02_variables;
+
+public class _13_typeCasting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. 묵시적(자동) 형변환
+		short sNum = 10;
+		int iNum = sNum;
+	}
+
+}

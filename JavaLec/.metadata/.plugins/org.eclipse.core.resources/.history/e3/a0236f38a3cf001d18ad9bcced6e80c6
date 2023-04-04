@@ -1,0 +1,18 @@
+package chap98_homework;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class hw_coll07 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<String, Integer> hyundai = 
+				new HashMap<String, Integer>();
+		Map<String, Integer> kia = 
+				new HashMap<String, Integer>();
+		
+		List<Map<String, Integer>>
+	}
+
+}
