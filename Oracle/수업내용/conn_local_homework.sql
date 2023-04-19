@@ -657,10 +657,26 @@ SELECT MAJOR
 -------------------------------------- 20 --------------------------------------
 
 --1) 각 학과별 학년별 학생 수를 ROLLUP함수로 검색하세요
-
+SELECT SNO
+    ,  SYEAR
+    ,  MAJOR
+    ,  COUNT(*)
+    FROM STUDENT
+    GROUP BY ROLLUP(SNO, SYEAR, MAJOR)
+    ORDER BY SNO, SYEAR, MAJOR;
 
 --2) 화학과와 생물학과 학생 4.5 환산 평점의 평균을 각각 검색하는 데 화학과 생물이 열로 만들어지도록 하세요.(PIVOT 사용)
-
+SELECT *
+    FROM (
+            SELECT MAJOR
+                ,  AVG
+                FROM STUDENT
+         )
+PIVOT(AVG(AVR)
+    FOR MAJOR IN('화학과' AS CHE,
+               '생물학' AS BIO
+               )
+);
 
 --3) 학과별 학생이름을 ,로 구분하여 성적순으로(내림차순) 조회하세요.(LISTAGG 사용)
 
@@ -689,7 +705,12 @@ SELECT MAJOR
 -------------------------------------- 22 --------------------------------------
 
 --1) 다중 컬럼 IN절을 이용해서 기말고사 성적이 80점 이상인 과목번호, 학생번호, 기말고사 성적을 모두 조회하세요.
-
+SELECT CNO
+    ,  SNO
+    ,  RESULT
+    FROM SCORE
+    NATURAL JOIN STUDENT
+    GROUP BY CNO, SNO, RESULT;
 
 --2) 다중 컬럼 IN절을 이용해서 화학과나 물리학과면서 학년이 1, 2, 3학년인 학생의 정보를 모두 조회하세요.
 
@@ -704,15 +725,60 @@ SELECT MAJOR
 
 --1) WITH 절을 이용하여 정교수만 모여있는 가상테이블 하나와 일반과목(과목명에 일반이 포함되는)들이 모여있는 가상테이블 하나를 생성하여 
 --   일반과목들을 강의하는 교수의 정보 조회하세요.(과목번호, 과목명, 교수번호, 교수이름)
-
+WITH
+    ORDERSJUNG AS (SELECT * FROM PROFESSOR WHERE ORDERS = '정교수'),
+    CNAMEIL AS (SELECT * FROM COURSE WHERE CNAME LIKE '%일반%')
+SELECT CNAMEIL.CNO
+    ,  CNAMEIL.CNAME
+    ,  ORDERSJUNG.PNO
+    ,  ORDERSJUNG.PNAME
+    FROM ORDERSJUNG
+        ,   CNAMEIL
+    WHERE ORDERSJUNG.PNO = CNAMEIL.PNO;
 
 --2) WITH 절을 이용하여 급여가 3000이상인 사원정보를 갖는 가상테이블 하나와 보너스가 500이상인 사원정보를 갖는 가상테이블 하나를 생성하여
 --   두 테이블에 모두 속해있는 사원의 정보를 모두 조회하세요.
-
+WITH
+    SALTH AS (SELECT * FROM EMP WHERE SAL >= 3000),
+    COMMFIF AS (SELECT * FROM EMP WHERE COMM >= 500)
+SELECT * FROM SALTH
+            ,  COMMFIF
+         WHERE SALTH.ENAME = COMMFIF.ENAME;
 
 --3) WITH 절을 이용하여 평점이 3.3이상인 학생의 목록을 갖는 가상테이블 하나와 학생별 기말고사 평균점수를 갖는 가상테이블 하나를 생성하여
 --   평점이 3.3이상인 학생의 기말고사 평균 점수를 조회하세요.
-
+WITH
+    STUDENTT AS (SELECT * FROM STUDENT WHERE AVR >= 3.3),
+    STUDENTTT AS (SELECT SNO
+        ,  SNAME
+        ,  RESULT
+        FROM STUDENT
+        NATURAL JOIN SCORE)
+SELECT * FROM STUDENTT
+            , STUDENTTT
+        WHERE STUDENTT.SNO = STUDENTTT.SNO;
 
 --4) WITH 절을 이용하여 부임일자가 25년이상된 교수정보를 갖는 가상테이블 하나와 과목번호, 과목명, 학생번호, 학생이름, 교수번호, 기말고사성적을
 --   갖는 가상테이블 하나를 생성하여 기말고사 성적이 90이상인 과목번호, 과목명, 학생번호, 학생이름, 교수번호, 교수이름, 기말고사성적을 조회하세요.
+WITH
+    HIREDATEE AS (SELECT * FROM PROFESSOR WHERE MONTHS_BETWEEN(SYSDATE, HIREDATE) >= 300),
+    COURSEE AS (SELECT CNO
+        ,  CNAME
+        ,  SNO
+        ,  SNAME
+        ,  PNO
+        ,  RESULT
+        FROM COURSE
+        NATURAL JOIN STUDENT
+        NATURAL JOIN PROFESSOR
+        NATURAL JOIN SCORE)
+SELECT DISTINCT COURESEE.CNO
+            , COURSEE.CNAME
+            , COURSEE.SNO
+            , COURSEE.SNAME
+            , COURSEE.PNO
+            , HIREDATEE.PNAME
+            , COURSEE.RESULT
+    FROM HIREDATEE
+    , COURSEE
+    WHERE RESULT >= 90;
